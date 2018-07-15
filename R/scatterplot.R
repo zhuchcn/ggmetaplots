@@ -28,6 +28,7 @@
 #'
 #' @return a ggplot object
 #' @author Chenghao Zhu
+#' @import ggplot2
 #' @export
 ggscatterplot = function(data,
                          x,
