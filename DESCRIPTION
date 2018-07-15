@@ -10,6 +10,7 @@ Imports:
     ggplot2
 Collate:
     boxplot.R
+    scatterplot.R
     themes.R
     test.R
 Encoding: UTF-8

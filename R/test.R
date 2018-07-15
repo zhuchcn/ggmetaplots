@@ -19,3 +19,12 @@
 # }
 #
 # ggboxplot(data = df, x = "Timepoint", y = "x")
+#
+# df = data.frame(
+#     x = lipidome_set$class$Adj_protein$conc_table["CE",],
+#     y = hdl_function$conc_table["Chol Efflux (ApoB Depleted Serum 1%)",],
+#     Timepoint = hdl_function$sample_table$Timepoint,
+#     Treatment = hdl_function$sample_table$Treatment,
+#     Subject = hdl_function$sample_table$Subject
+# )
+# ggscatterplot(data=df, x="x", y="y")

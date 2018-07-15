@@ -51,22 +51,22 @@ ggboxplot = function(data,
                      point.color   = "black",
                      color.pal     = NULL,
                      show.legend   = TRUE){
-    # force color.pal to be null when color.by is not specified.
-    if(missing(color) & !is.null(color.pal)){
+    # force color.pal to be null when color is not specified.
+    if(missing(color)) color = NULL
+    if(is.null(color) & !is.null(color.pal)){
         color.pal = NULL
-        warning("[ ggmetaplot ] Ignored the color.pal argument because the color.by is not specified")
+        warning("[ ggmetaplot ] Ignored the color.pal argument because the color is not specified")
     }
     facet_cols = if(!missing(cols)) vars(!!sym(cols)) else vars()
     facet_rows = if(!missing(rows)) vars(!!sym(rows)) else vars()
-    color = if(!missing(color)) sym(color) else NULL
-    # add color to it if color.by is specified.
+    # add color to it if color is specified.
     my_geom_point = function(){
         if(is.null(color)){
             geom_point(size = point.size, alpha = point.alpha,
                        color = point.color,
                        position = position_jitter(w=jitter))
         }else{
-            geom_point(aes(color = !!color),
+            geom_point(aes_string(color = color),
                        size = point.size, alpha = point.alpha,
                        position = position_jitter(w=jitter))
         }
@@ -87,10 +87,10 @@ ggboxplot = function(data,
     }
     # line
     if(!missing(line))
-        p = p + geom_line(aes(group = !!sym(line), color = !!color))
+        p = p + geom_line(aes_string(group = line, color = color))
     # color panel
     if(!is.null(color.pal)){
-        col_num = length(unique(df[,color.by]))
+        col_num = length(unique(data[,color]))
         mypal = colorRampPalette(colors = color.pal)
         p = p + scale_color_manual(
             values = mypal(col_num))
