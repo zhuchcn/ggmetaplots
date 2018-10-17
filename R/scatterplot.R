@@ -64,7 +64,7 @@ ggscatterplot = function(data,
         }
     }
 
-    p = ggplot(data, aes_string(x=x, y=y)) +
+    p = ggplot(data, aes(x=!!sym(x), y=!!sym(y))) +
         my_geom_point() +
         theme_bw()
     # trendline

@@ -68,7 +68,7 @@ ggboxplot = function(data,
         }else{
             geom_point(aes_string(color = color),
                        size = point.size, alpha = point.alpha,
-                       position = position_jitter(w=jitter))
+                       position = position_jitter(w=jitter, h = 0))
         }
     }
     # main plotting part
