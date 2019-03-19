@@ -60,6 +60,7 @@ ggboxplot = function(data,
     facet_cols = if(!missing(cols)) vars(!!sym(cols)) else vars()
     facet_rows = if(!missing(rows)) vars(!!sym(rows)) else vars()
     # add color to it if color is specified.
+    # TODO: add support to point shape, as well as the fill and color when shape = 21 is used.
     my_geom_point = function(){
         if(is.null(color)){
             geom_point(size = point.size, alpha = point.alpha,

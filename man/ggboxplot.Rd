@@ -5,9 +5,9 @@
 \title{Make a boxplot using ggplot2}
 \usage{
 ggboxplot(data, x, y, cols, rows, line, color, show.points = TRUE,
-  jitter = 0, box.size = 0.5, whisker.size = 0.5, whisker.width = 0.5,
-  point.size = 3, point.alpha = 0.5, point.color = "black",
-  color.pal = NULL, show.legend = TRUE)
+  jitter = 0, box.size = 0.5, whisker.size = 0.5,
+  whisker.width = 0.5, point.size = 3, point.alpha = 0.5,
+  point.color = "black", color.pal = NULL, show.legend = TRUE)
 }
 \arguments{
 \item{data}{A data.frame containing all the variables needed to draw the box

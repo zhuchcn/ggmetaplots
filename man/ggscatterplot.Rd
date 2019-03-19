@@ -5,9 +5,9 @@
 \title{Make a scatterplot using ggplot2}
 \usage{
 ggscatterplot(data, x, y, cols, rows, color, trendline = TRUE,
-  trendline.color = "steelblue", trendline.size = 1, show.points = TRUE,
-  point.size = 3, point.alpha = 1, point.color = "black",
-  color.pal = NULL, show.legend = TRUE)
+  trendline.color = "steelblue", trendline.size = 1,
+  show.points = TRUE, point.size = 3, point.alpha = 1,
+  point.color = "black", color.pal = NULL, show.legend = TRUE)
 }
 \arguments{
 \item{data}{A data.frame containing all the variables needed to draw the box
